@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FlightSoft Configurator V2</title>
+    <script>
+      /* Pick day or night before the first paint so the page never
+         flashes the wrong theme: the stored choice, else the OS. */
+      (function () {
+        var theme = "dark";
+        try {
+          var stored = localStorage.getItem("flightsoft-theme");
+          if (stored === "light" || stored === "dark") theme = stored;
+          else if (window.matchMedia("(prefers-color-scheme: light)").matches) theme = "light";
+        } catch (e) { /* keep night */ }
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script>
+    <script type="module" crossorigin src="/flightsoft/assets/index-FMb3P5N_.js"></script>
+    <link rel="stylesheet" crossorigin href="/flightsoft/assets/index-CBOJ-A5k.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
